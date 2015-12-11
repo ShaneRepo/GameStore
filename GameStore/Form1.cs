@@ -22,6 +22,9 @@ namespace GameStore
         {
             InitializeComponent();
         }
-
+        public void Help()
+        {
+            MessageBox.Show("The app allows you to add games to a shopping list, save and load the list.");
+        }
     }
 }

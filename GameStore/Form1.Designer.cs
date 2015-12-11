@@ -39,6 +39,7 @@
             this.labelPrice = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.buttonHelp = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTitle
@@ -54,16 +55,16 @@
             // listBoxGames
             // 
             this.listBoxGames.FormattingEnabled = true;
-            this.listBoxGames.Location = new System.Drawing.Point(436, 203);
+            this.listBoxGames.Location = new System.Drawing.Point(364, 203);
             this.listBoxGames.Name = "listBoxGames";
-            this.listBoxGames.Size = new System.Drawing.Size(352, 264);
+            this.listBoxGames.Size = new System.Drawing.Size(283, 264);
             this.listBoxGames.TabIndex = 1;
             // 
             // labelListboxGames
             // 
             this.labelListboxGames.AutoSize = true;
             this.labelListboxGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListboxGames.Location = new System.Drawing.Point(544, 180);
+            this.labelListboxGames.Location = new System.Drawing.Point(437, 168);
             this.labelListboxGames.Name = "labelListboxGames";
             this.labelListboxGames.Size = new System.Drawing.Size(137, 20);
             this.labelListboxGames.TabIndex = 2;
@@ -80,7 +81,7 @@
             // 
             // buttonSave
             // 
-            this.buttonSave.Location = new System.Drawing.Point(70, 542);
+            this.buttonSave.Location = new System.Drawing.Point(31, 406);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(75, 23);
             this.buttonSave.TabIndex = 4;
@@ -89,7 +90,7 @@
             // 
             // buttonLoad
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(193, 542);
+            this.buttonLoad.Location = new System.Drawing.Point(140, 406);
             this.buttonLoad.Name = "buttonLoad";
             this.buttonLoad.Size = new System.Drawing.Size(75, 23);
             this.buttonLoad.TabIndex = 5;
@@ -138,12 +139,22 @@
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 10;
             // 
+            // buttonHelp
+            // 
+            this.buttonHelp.Location = new System.Drawing.Point(86, 464);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(75, 23);
+            this.buttonHelp.TabIndex = 11;
+            this.buttonHelp.Text = "Help";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(931, 743);
+            this.ClientSize = new System.Drawing.Size(817, 541);
+            this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelPrice);
@@ -175,6 +186,7 @@
         private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Button buttonHelp;
     }
 }
 
