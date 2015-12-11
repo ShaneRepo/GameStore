@@ -16,8 +16,8 @@ namespace GameStore
         // global stream objects
         StreamWriter outputFile;
         StreamReader inputFile;
-        // global list object to hold computer game objects
-        List<Computer> gameList = new List<Computer>();
+        // global list object to hold game objects
+        List<Game> gameList = new List<Game>();
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +25,21 @@ namespace GameStore
         public void Help()
         {
             MessageBox.Show("The app allows you to add games to a shopping list, save and load the list.");
+        }
+        // method to convert listbox items to list
+        public void ToList()
+        {
+            gameList.Clear();          
+             foreach (Game g in listBoxGames.Items)
+             {
+                 gameList.Add(g);
+             }         
+        }
+        publ
+
+        private void buttonSave_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
