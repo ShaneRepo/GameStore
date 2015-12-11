@@ -16,10 +16,10 @@ namespace GameStore
 
         }
         // constuctor with params that calls base constuctor
-        public Computer(string plat,string name,string genre, double price, string recAge, string players)
-            : base("name", "genre", price, "recAge", "players")
+        public Computer(string name, double price)
+            : base("name", price)
         {
-            _platform = plat;
+            
         }
         // Platform property
         public string Platform
