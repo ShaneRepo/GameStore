@@ -35,11 +35,52 @@ namespace GameStore
                  gameList.Add(g);
              }         
         }
-        publ
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            ToList();
+            try
+            {
+                StreamWriter outputFile = File.CreateText("list.txt");
+                foreach (Game g in gameList)
+                {
+                    outputFile.WriteLine(g);
+                }
+                outputFile.Close();
+                MessageBox.Show("Your file has been saved.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No data to save. Enter games into the list first.");
+            }
+        }
+        // call the help method
+        private void buttonHelp_Click(object sender, EventArgs e)
+        {
+            Help();
+        }
+        // clear the listbox
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            listBoxGames.Items.Clear();
+        }
 
+        private void buttonLoad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                StreamReader inputFile = File.OpenText("list.txt");
+                while (!inputFile.EndOfStream)
+                {
+                    listBoxGames.Items.Add(inputFile.ReadLine());
+                }
+                inputFile.Close();
+                MessageBox.Show("Your file has been loaded into the listbox.");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No file to load. Save a file first then try loading.");
+            }
         }
     }
 }

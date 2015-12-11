@@ -98,6 +98,7 @@
             this.buttonLoad.TabIndex = 5;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
+            this.buttonLoad.Click += new System.EventHandler(this.buttonLoad_Click);
             // 
             // labelEnterData
             // 
@@ -149,6 +150,7 @@
             this.buttonHelp.TabIndex = 11;
             this.buttonHelp.Text = "Help";
             this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // buttonClear
             // 
@@ -158,6 +160,7 @@
             this.buttonClear.TabIndex = 12;
             this.buttonClear.Text = "Clear List";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // Form1
             // 
