@@ -36,5 +36,10 @@ namespace GameStore
             get { return _price; }
             set { _price = value; }
         }
+
+        public override string ToString()
+        {
+            return _name + " " + _price;
+        }
     }
 }
