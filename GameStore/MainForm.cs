@@ -11,7 +11,7 @@ using System.IO;
 
 namespace GameStore
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         // global stream objects
         StreamWriter outputFile;
@@ -19,7 +19,7 @@ namespace GameStore
         // global list object to hold game objects
         List<Game> gameList = new List<Game>();
         Game someGame;
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
         }

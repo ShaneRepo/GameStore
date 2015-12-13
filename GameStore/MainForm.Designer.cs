@@ -1,6 +1,6 @@
 ﻿namespace GameStore
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -165,7 +165,7 @@
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -184,8 +184,8 @@
             this.Controls.Add(this.labelListboxGames);
             this.Controls.Add(this.listBoxGames);
             this.Controls.Add(this.labelTitle);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "MainForm";
+            this.Text = "Xmas Shopping List";
             this.ResumeLayout(false);
             this.PerformLayout();
 
