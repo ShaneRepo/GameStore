@@ -18,6 +18,7 @@ namespace GameStore
         StreamReader inputFile;
         // global list object to hold game objects
         List<Game> gameList = new List<Game>();
+        Game someGame;
         public Form1()
         {
             InitializeComponent();
@@ -27,18 +28,19 @@ namespace GameStore
             MessageBox.Show("The app allows you to add games to a shopping list, save and load the list.");
         }
         // method to convert listbox items to list
-        public void ToList()
-        {
-            gameList.Clear();          
-             foreach (Game g in listBoxGames.Items)
-             {
-                 gameList.Add(g);
-             }         
-        }
+        //public void ToList()
+        //{          
+        //     foreach (string g in listBoxGames.Items)
+        //     {
+
+        //         Game j = new Game(g.Name,g.Price);
+        //         gameList.Add(j);
+        //     }         
+        //}
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            ToList();
+            //ToList();
             try
             {
                 StreamWriter outputFile = File.CreateText("list.txt");
@@ -64,7 +66,7 @@ namespace GameStore
         {
             listBoxGames.Items.Clear();
         }
-
+        // load the listbox
         private void buttonLoad_Click(object sender, EventArgs e)
         {
             try
@@ -72,7 +74,16 @@ namespace GameStore
                 StreamReader inputFile = File.OpenText("list.txt");
                 while (!inputFile.EndOfStream)
                 {
-                    listBoxGames.Items.Add(inputFile.ReadLine());
+                    List<string> gameList2 = new List<string>();
+                    //listBoxGames.Items.Add(inputFile.ReadLine());
+                    gameList2.Add(inputFile.ReadLine());
+                    foreach (string g in gameList2)
+                    {
+                        //string output;
+                        //output = g.Name + " " + g.Price;
+                        listBoxGames.Items.Add(g);
+                    }
+                    
                 }
                 inputFile.Close();
                 MessageBox.Show("Your file has been loaded into the listbox.");
@@ -80,6 +91,33 @@ namespace GameStore
             catch (Exception ex)
             {
                 MessageBox.Show("No file to load. Save a file first then try loading.");
+            }
+        }
+        // add a game to the listbox
+        private void buttonAdd_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrWhiteSpace(textBoxName.Text))
+            {
+                Game someGame = new Game();
+                string output;
+                someGame.Name = textBoxName.Text;
+                someGame.Price = double.Parse(textBoxPrice.Text);
+                gameList.Add(someGame);
+                foreach (Game g in gameList)
+                {
+                    output = g.Name + " " + g.Price;
+                    listBoxGames.Items.Add(output);
+                }
+                //listBoxGames.Items.Add(gameList);
+                //listBoxGames.Items.Add(someGame.Price).ToString();
+                textBoxName.Clear();
+                textBoxPrice.Clear();
+                textBoxName.Focus();
+            }
+            else
+            {
+                MessageBox.Show("Enter a game into the textbox you want to add.");
+                textBoxName.Focus();
             }
         }
     }
