@@ -11,7 +11,7 @@ using System.IO;
 
 namespace GameStore
 {
-    public partial class MainForm : Form
+    public partial class Form1 : Form
     {
         // global stream objects
         StreamWriter outputFile;
@@ -19,7 +19,7 @@ namespace GameStore
         // global list object to hold game objects
         List<Game> gameList = new List<Game>();
         Game someGame;
-        public MainForm()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -27,20 +27,9 @@ namespace GameStore
         {
             MessageBox.Show("The app allows you to add games to a shopping list, save and load the list.");
         }
-        // method to convert listbox items to list
-        //public void ToList()
-        //{          
-        //     foreach (string g in listBoxGames.Items)
-        //     {
-
-        //         Game j = new Game(g.Name,g.Price);
-        //         gameList.Add(j);
-        //     }         
-        //}
-
+        // save list
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            //ToList();
             try
             {
                 StreamWriter outputFile = File.CreateText("list.txt");
@@ -75,15 +64,11 @@ namespace GameStore
                 while (!inputFile.EndOfStream)
                 {
                     List<string> gameList2 = new List<string>();
-                    //listBoxGames.Items.Add(inputFile.ReadLine());
                     gameList2.Add(inputFile.ReadLine());
                     foreach (string g in gameList2)
                     {
-                        //string output;
-                        //output = g.Name + " " + g.Price;
                         listBoxGames.Items.Add(g);
-                    }
-                    
+                    }                  
                 }
                 inputFile.Close();
                 MessageBox.Show("Your file has been loaded into the listbox.");
@@ -96,28 +81,54 @@ namespace GameStore
         // add a game to the listbox
         private void buttonAdd_Click(object sender, EventArgs e)
         {
+            string output;
+
             if (!string.IsNullOrWhiteSpace(textBoxName.Text))
             {
                 Game someGame = new Game();
-                string output;
                 someGame.Name = textBoxName.Text;
-                someGame.Price = double.Parse(textBoxPrice.Text);
-                gameList.Add(someGame);
-                foreach (Game g in gameList)
-                {
-                    output = g.Name + " " + g.Price;
-                    listBoxGames.Items.Add(output);
-                }
-                //listBoxGames.Items.Add(gameList);
-                //listBoxGames.Items.Add(someGame.Price).ToString();
-                textBoxName.Clear();
-                textBoxPrice.Clear();
-                textBoxName.Focus();
+                
             }
             else
             {
                 MessageBox.Show("Enter a game into the textbox you want to add.");
                 textBoxName.Focus();
+            }
+                if (!string.IsNullOrWhiteSpace(textBoxPrice.Text))
+                {
+                    someGame.Price = double.Parse(textBoxPrice.Text);
+                    gameList.Add(someGame);
+                }
+                else
+                {
+                    MessageBox.Show("Enter a price into the textbox you want to add.");
+                    textBoxPrice.Focus();
+                }
+            
+                
+                foreach (Game g in gameList)
+                {
+                    output = g.Name + " " + g.Price;
+                    listBoxGames.Items.Add(output);
+                }
+                textBoxName.Clear();
+                textBoxPrice.Clear();
+                textBoxName.Focus();
+            
+            
+        }
+        // only allow numbers in textbox price
+        private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            // only allow one decimal point
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
             }
         }
     }

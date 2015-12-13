@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace GameStore
 {
-    // base class which all games derive from: TODO make abstract?
-    class Game
+    // Game class
+    class Game : Computer
     {
         private string _name;
         private double _price;
@@ -17,7 +17,7 @@ namespace GameStore
         {
 
         }
-        // constructor for the Game class, must include all fields
+        // constructor for the Game class with params
         public Game(string name, double price)
         {
             _name = name;

@@ -1,6 +1,6 @@
 ﻿namespace GameStore
 {
-    partial class MainForm
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -56,7 +56,7 @@
             // listBoxGames
             // 
             this.listBoxGames.FormattingEnabled = true;
-            this.listBoxGames.Location = new System.Drawing.Point(285, 157);
+            this.listBoxGames.Location = new System.Drawing.Point(339, 159);
             this.listBoxGames.Name = "listBoxGames";
             this.listBoxGames.Size = new System.Drawing.Size(283, 264);
             this.listBoxGames.TabIndex = 1;
@@ -65,7 +65,7 @@
             // 
             this.labelListboxGames.AutoSize = true;
             this.labelListboxGames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelListboxGames.Location = new System.Drawing.Point(335, 105);
+            this.labelListboxGames.Location = new System.Drawing.Point(403, 105);
             this.labelListboxGames.Name = "labelListboxGames";
             this.labelListboxGames.Size = new System.Drawing.Size(137, 20);
             this.labelListboxGames.TabIndex = 2;
@@ -73,9 +73,10 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(79, 250);
+            this.buttonAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonAdd.Location = new System.Drawing.Point(101, 254);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 55);
+            this.buttonAdd.Size = new System.Drawing.Size(122, 55);
             this.buttonAdd.TabIndex = 3;
             this.buttonAdd.Text = "Add Game";
             this.buttonAdd.UseVisualStyleBackColor = true;
@@ -83,9 +84,10 @@
             // 
             // buttonSave
             // 
+            this.buttonSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSave.Location = new System.Drawing.Point(31, 329);
             this.buttonSave.Name = "buttonSave";
-            this.buttonSave.Size = new System.Drawing.Size(75, 45);
+            this.buttonSave.Size = new System.Drawing.Size(122, 45);
             this.buttonSave.TabIndex = 4;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
@@ -93,9 +95,10 @@
             // 
             // buttonLoad
             // 
-            this.buttonLoad.Location = new System.Drawing.Point(126, 329);
+            this.buttonLoad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonLoad.Location = new System.Drawing.Point(174, 329);
             this.buttonLoad.Name = "buttonLoad";
-            this.buttonLoad.Size = new System.Drawing.Size(75, 45);
+            this.buttonLoad.Size = new System.Drawing.Size(119, 45);
             this.buttonLoad.TabIndex = 5;
             this.buttonLoad.Text = "Load";
             this.buttonLoad.UseVisualStyleBackColor = true;
@@ -144,12 +147,14 @@
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(100, 20);
             this.textBoxPrice.TabIndex = 10;
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
             // 
             // buttonHelp
             // 
+            this.buttonHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHelp.Location = new System.Drawing.Point(31, 395);
             this.buttonHelp.Name = "buttonHelp";
-            this.buttonHelp.Size = new System.Drawing.Size(75, 51);
+            this.buttonHelp.Size = new System.Drawing.Size(122, 51);
             this.buttonHelp.TabIndex = 11;
             this.buttonHelp.Text = "Help";
             this.buttonHelp.UseVisualStyleBackColor = true;
@@ -157,20 +162,21 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(126, 395);
+            this.buttonClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonClear.Location = new System.Drawing.Point(176, 395);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(75, 52);
+            this.buttonClear.Size = new System.Drawing.Size(117, 51);
             this.buttonClear.TabIndex = 12;
             this.buttonClear.Text = "Clear List";
             this.buttonClear.UseVisualStyleBackColor = true;
             this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
-            // MainForm
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(601, 474);
+            this.ClientSize = new System.Drawing.Size(739, 474);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.buttonHelp);
             this.Controls.Add(this.textBoxPrice);
@@ -184,8 +190,8 @@
             this.Controls.Add(this.labelListboxGames);
             this.Controls.Add(this.listBoxGames);
             this.Controls.Add(this.labelTitle);
-            this.Name = "MainForm";
-            this.Text = "Xmas Shopping List";
+            this.Name = "Form1";
+            this.Text = "Xmas Shopping Game List";
             this.ResumeLayout(false);
             this.PerformLayout();
 
